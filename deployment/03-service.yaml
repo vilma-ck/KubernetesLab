@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-service
+  namespace: kublab
+spec:
+  selector:
+    app: kubernetes
+  ports:
+    - name: application
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
